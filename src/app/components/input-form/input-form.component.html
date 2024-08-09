@@ -1,43 +1,17 @@
-<div class="card">
-    <p-table [columns]="cols" [value]="expenseData" [tableStyle]="{ 'min-width': '50rem' }">
-        <ng-template pTemplate="header" let-columns>
-            <tr>
-                <th *ngFor="let col of columns">
-                    {{ col.header }}
-                </th>
-                <th>
-                    Action
-                </th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-rowData let-columns="columns">
-            <tr>
-                <td *ngFor="let col of columns">
-                    {{ rowData[col.field] }}
-                </td>
-                <td class="d-flex justify-content-center">
-                    <app-button class="me-1" [iconClass]="editIcon" (click)="showDialog(this.rowData)"></app-button>
-                    <app-button class="ms-1" [iconClass]="deleteIcon" (click)="deleteExpense(this.rowData.id)"></app-button>
-                </td>
-            </tr>
-        </ng-template>
-    </p-table>
-</div>
-
-<p-dialog header="Edit Expense" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+<!-- <p-dialog header="Add Expense" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
     <div 
       class=" container form-signin w-100 d-flex justify-content-center "
       
     >
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    
+
         <div class="form-floating m-2">
           <input
             type="text"
             class="form-control"
             id="nameInput"
             placeholder="Shoes..."
-            formControlName="name"          
+            formControlName="name"
           />
           <label for="nameInput">Expense name</label>
         </div>
@@ -67,8 +41,8 @@
           [disabled]="loginForm.invalid"
         >
         <i class="pi pi-save"></i>
-          Save
+          Add Expense
         </button>
       </form>
     </div>
-    </p-dialog>
+    </p-dialog> -->

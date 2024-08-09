@@ -1,7 +1,55 @@
 <div class="container mainDiv rounded mt-3 d-flex flex-column justify-content-center align-items-center">
     <h1>My Expense Tracker</h1>
-    <app-button [iconClass]="addIcon" [label]="buttonlabel"></app-button>
+    <app-button [iconClass]="addIcon" [label]="buttonlabel" (click)="showDialog()"></app-button>
     <div class="mt-3 mb-3">
         <app-table [expenseData]="data"></app-table>
     </div>
 </div>
+<p-dialog header="Add Expense" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+<div 
+  class=" container form-signin w-100 d-flex justify-content-center "
+  
+>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-floating m-2">
+      <input
+        type="text"
+        class="form-control"
+        id="nameInput"
+        placeholder="Shoes..."
+        formControlName="name"
+      />
+      <label for="nameInput">Expense name</label>
+    </div>
+    <div class="form-floating m-2">
+      <input
+        type="text"
+        class="form-control"
+        id="descriptionInput"
+        placeholder="Description"
+        formControlName="description"
+      />
+      <label for="descriptionInput">Description</label>
+    </div>
+    <div class="form-floating m-2">
+      <input
+        type="number"
+        class="form-control"
+        id="amountInput"
+        placeholder="Rs."
+        formControlName="amount"
+      />
+      <label for="amountInput">Amount</label>
+    </div>
+    <button
+      class="btn btn-primary submitBtn w-100 py-2"
+      type="submit"
+      [disabled]="loginForm.invalid"
+    >
+    <i class="pi pi-save"></i>
+      Add Expense
+    </button>
+  </form>
+</div>
+</p-dialog>

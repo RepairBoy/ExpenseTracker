@@ -1,3 +1,10 @@
 .mainDiv{
     background-color: #a2865b;
 }
+h1{
+    color: #1d261e;
+}
+.submitBtn{
+    background-color: #708871;
+    border: none;
+}

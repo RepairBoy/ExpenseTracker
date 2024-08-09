@@ -7,3 +7,9 @@ export interface Expense {
     name: string;
       
 }
+
+export interface EditExpense {
+    amount: number;
+    description: string;
+    name: string;
+}
